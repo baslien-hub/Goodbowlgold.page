@@ -31,7 +31,9 @@ Accents are for brush marks, buttons and small highlights — never large flat f
 - Hand-painted / gouache texture, visible brush strokes and paper grain.
 - Rich, natural colors — not overly saturated.
 - Cropped, organic compositions; collage of artwork + photos of objects.
-- Authentic, personal, expressive. Real work only in production (current `assets/` crops are placeholders).
+- Authentic, personal, expressive. Real work only — `assets/` photos come from @good.bowl.gold and @character.g.b.g (max 1000px, JPG q82).
+- Hero = collage of 3 photos on white "print" frames, slightly rotated, with brush motifs behind.
+- Prefer pet portraits / objects over client faces when picking commission work.
 
 ## Graphic motifs
 

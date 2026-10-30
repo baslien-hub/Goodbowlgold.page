@@ -50,7 +50,15 @@
   .hero h2 { font-size: 16px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; line-height: 1.5; margin: 0; }
   .rule { width: 48px; height: 1px; background: var(--ink); margin: 22px 0; }
   .hero p { margin: 0; max-width: 32ch; color: var(--muted); }
-  .hero-art { mix-blend-mode: multiply; width: 100%; }
+  .collage { position: relative; aspect-ratio: 6 / 5; }
+  .collage img { position: absolute; z-index: 1; object-fit: cover; background: #fff; padding: 8px; box-shadow: 0 10px 30px rgba(36,35,33,.15); }
+  .collage .c1 { width: 56%; aspect-ratio: 1; left: 14%; top: 4%; transform: rotate(-3deg); }
+  .collage .c2 { width: 34%; aspect-ratio: 4 / 5; left: 0; bottom: 0; transform: rotate(-7deg); z-index: 2; }
+  .collage .c3 { width: 40%; aspect-ratio: 1; right: 0; top: 32%; transform: rotate(5deg); z-index: 2; }
+
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform .25s; }
+  .gallery a:hover img { transform: rotate(-2deg) scale(1.03); }
   .btns { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 34px; }
 
   /* buttons */
@@ -119,7 +127,8 @@
     .hero { padding: 16px 0 56px; }
     .hero .wrap, .studio, .contact { grid-template-columns: 1fr; gap: 36px; }
     .hero h1 { font-size: clamp(48px, 15vw, 72px); margin-bottom: 24px; }
-    .hero-art { order: -1; }
+    .collage { order: -1; }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .works { grid-template-columns: 1fr; gap: 28px; }
     section { padding: 56px 0; }
   }
@@ -165,8 +174,14 @@
           <a class="btn-line" href="#studio">View more →</a>
         </div>
       </div>
-      <!-- ponytail: placeholder crop from the concept board; swap for real studio photos -->
-      <img class="hero-art" src="assets/hero.jpg" alt="ภาพวาดตัวละคร ภาพสีน้ำ และต่างหูดินโพลิเมอร์ของ Good Bowl Gold">
+      <div class="collage">
+        <svg class="motif" style="z-index:0;left:-2%;top:-6%;width:60%;height:62%;fill:var(--cobalt);opacity:.9"><use href="#m-brush"/></svg>
+        <svg class="motif" style="z-index:0;right:-2%;bottom:2%;width:30%;height:22%;fill:var(--ochre)"><use href="#m-brush"/></svg>
+        <svg class="motif" style="z-index:3;right:30%;bottom:-2%;width:16%;height:12%;stroke:var(--aqua)"><use href="#m-scribble"/></svg>
+        <img class="c1" src="assets/hero-cat.jpg" alt="ภาพวาดสีน้ำแมวส้ม โดย Good Bowl Gold">
+        <img class="c2" src="assets/hero-canvas.jpg" alt="เวิร์กช็อปเพ้นท์ภาพทิวทัศน์บนเฟรมผ้าใบ">
+        <img class="c3" src="assets/hero-earrings.jpg" alt="ต่างหูดินโพลิเมอร์ลายขาวดำกับดอกไม้สีเหลือง">
+      </div>
     </div>
   </section>
 
@@ -183,13 +198,23 @@
           <div class="cap label"><span>Illustration</span><span>→</span></div>
         </a>
         <a class="work" href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener">
-          <img src="assets/work-landscape.jpg" alt="Watercolour painting" loading="lazy">
+          <img src="assets/work-watercolour.jpg" alt="โต๊ะทำงานสีน้ำและภาพวาด" loading="lazy">
           <div class="cap label"><span>Watercolour</span><span>→</span></div>
         </a>
         <a class="work" href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener">
-          <img src="assets/work-objects.jpg" alt="Handmade objects" loading="lazy">
+          <img src="assets/work-objects.jpg" alt="สร้อยคอหินและลูกปัดแก้วพร้อมต่างหูเข้าชุด" loading="lazy">
           <div class="cap label"><span>Handmade objects</span><span>→</span></div>
         </a>
+      </div>
+      <div class="gallery">
+        <a href="https://www.instagram.com/character.g.b.g/" target="_blank" rel="noopener"><img src="assets/g1.jpg" alt="ภาพวาดสีน้ำสุนัขขนน้ำตาล" loading="lazy"></a>
+        <a href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener"><img src="assets/g2.jpg" alt="ต่างหูดินโพลิเมอร์ขาวดำเหลือง" loading="lazy"></a>
+        <a href="https://www.instagram.com/character.g.b.g/" target="_blank" rel="noopener"><img src="assets/g3.jpg" alt="ภาพวาดแมวกับกระถางดอกไม้" loading="lazy"></a>
+        <a href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener"><img src="assets/g4.jpg" alt="ต่างหูเปลือกหอยและลูกปัดแก้ว" loading="lazy"></a>
+        <a href="https://www.instagram.com/character.g.b.g/" target="_blank" rel="noopener"><img src="assets/g5.jpg" alt="ภาพวาดแมวลายสลิด" loading="lazy"></a>
+        <a href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener"><img src="assets/g6.jpg" alt="ต่างหูดินโพลิเมอร์กับลูกปัดสีโอลด์โรส" loading="lazy"></a>
+        <a href="https://www.instagram.com/character.g.b.g/" target="_blank" rel="noopener"><img src="assets/g7.jpg" alt="ภาพวาดสุนัขขาวกับพวงมาลัยดอกไม้" loading="lazy"></a>
+        <a href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener"><img src="assets/g8.jpg" alt="ชุดต่างหูโทนกรมท่าและทอง" loading="lazy"></a>
       </div>
     </div>
   </section>
