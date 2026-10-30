@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Bowl Gold Studio</title>
+<meta name="description" content="Good Bowl Gold — Art & Crafts Studio, Chiang Mai. Art on Clay est. 2014. งานแฮนด์เมด สีน้ำ ดินโพลิเมอร์ Character Design และ Workshop">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #fbf7ef;
+    --paper-2: #f3ecdd;
+    --ink: #161412;
+    --muted: #5e5850;
+    --gold: #c9962e;
+    --gold-soft: #f1dfb2;
+    --radius: 22px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Mali", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .hand { font-family: "Caveat", cursive; }
+
+  /* nav */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 2px solid var(--ink);
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; }
+  .brand { font-weight: 700; text-decoration: none; letter-spacing: .5px; }
+  .brand span { color: var(--gold); }
+  nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  nav ul a { text-decoration: none; font-weight: 600; }
+  nav ul a:hover { color: var(--gold); }
+
+  /* hero */
+  .hero { padding: 64px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px; }
+  .hero-logo {
+    width: 100%; max-width: 360px;
+    aspect-ratio: 4 / 5; object-fit: cover; object-position: 0 50%;
+    mix-blend-mode: multiply; /* ponytail: logo jpg has white bg; multiply blends it into paper */
+  }
+  .tag {
+    display: inline-block; padding: 4px 14px; border: 2px solid var(--ink);
+    border-radius: 999px; font-size: .9rem; background: var(--gold-soft);
+  }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.15; margin: 16px 0 10px; }
+  h1 .hand { color: var(--gold); font-size: 1.2em; }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 34ch; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border: 2px solid var(--ink); border-radius: 999px;
+    text-decoration: none; font-weight: 700; background: var(--ink); color: var(--paper);
+    box-shadow: 4px 4px 0 var(--gold); transition: transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--gold); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+
+  section { padding: 72px 0; scroll-margin-top: 50px; }
+  .alt { background: var(--paper-2); border-block: 2px solid var(--ink); }
+  h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); margin: 0 0 8px; }
+  h2 .hand { color: var(--gold); font-size: 1.15em; margin-left: 6px; }
+  .sub { color: var(--muted); margin: 0 0 36px; }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stat { border: 2px solid var(--ink); border-radius: var(--radius); padding: 18px 12px; text-align: center; background: var(--paper); }
+  .stat b { display: block; font-size: 1.6rem; color: var(--gold); }
+
+  /* cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .card {
+    border: 2px solid var(--ink); border-radius: var(--radius); padding: 24px;
+    background: var(--paper); box-shadow: 5px 5px 0 var(--ink);
+  }
+  .card .ico { font-size: 2rem; }
+  .card h3 { margin: 8px 0 6px; font-size: 1.2rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+  .chips li { border: 2px dashed var(--ink); border-radius: 999px; padding: 8px 16px; background: var(--paper); }
+
+  /* contact */
+  .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .contact-list a {
+    display: flex; align-items: center; gap: 14px; padding: 14px 18px; text-decoration: none;
+    border: 2px solid var(--ink); border-radius: var(--radius); background: var(--paper);
+    transition: background .15s;
+  }
+  .contact-list a:hover { background: var(--gold-soft); }
+  .contact-list .k { font-size: .8rem; color: var(--muted); display: block; line-height: 1.2; }
+  .contact-list .v { font-weight: 700; }
+  .contact-list .ic { width: 42px; height: 42px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--paper); font-weight: 700; }
+
+  /* travel */
+  .map { border: 2px solid var(--ink); border-radius: var(--radius); overflow: hidden; box-shadow: 5px 5px 0 var(--gold); }
+  .map iframe { display: block; width: 100%; height: 380px; border: 0; }
+
+  footer { padding: 32px 0; text-align: center; border-top: 2px solid var(--ink); color: var(--muted); font-size: .9rem; }
+
+  @media (max-width: 760px) {
+    nav ul { display: none; } /* ponytail: single-page scroll is enough on mobile; add a burger menu if users ask */
+    .hero { padding: 36px 0 48px; }
+    .hero .wrap, .about { grid-template-columns: 1fr; }
+    .hero-logo { max-width: 240px; margin: 0 auto; order: -1; }
+    section { padding: 52px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">GOOD BOWL <span>GOLD</span></a>
+    <ul>
+      <li><a href="#about">เกี่ยวกับเรา</a></li>
+      <li><a href="#services">มีอะไรบ้าง</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+      <li><a href="#travel">เดินทาง</a></li>
+    </ul>
+    <a class="btn" href="#contact" style="padding:8px 16px;box-shadow:3px 3px 0 var(--gold)">ทักเลย</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag">“Art on Clay” · est. 2014</span>
+        <h1>Good Bowl Gold<br><span class="hand">Art &amp; Crafts Studio</span></h1>
+        <p class="lead">สตูดิโองานศิลปะแฮนด์เมดจากเชียงใหม่ — สีน้ำ ดินโพลิเมอร์ เครื่องประดับ และ Character Design ทุกชิ้นออกแบบเองโดย GoodBowlGold</p>
+        <div class="btns">
+          <a class="btn" href="#services">ดูว่าเรามีอะไร</a>
+          <a class="btn ghost" href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener">ดูผลงานใน Instagram</a>
+        </div>
+      </div>
+      <img class="hero-logo" src="93289157_663488617769292_4104856057610764288_n.jpg" alt="โลโก้ Good Bowl Gold Art & Crafts Studio">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="alt">
+    <div class="wrap about">
+      <div>
+        <h2>เกี่ยวกับเรา <span class="hand">about us</span></h2>
+        <p>Good Bowl Gold เริ่มต้นในปี 2014 ด้วยความรักในงาน “Art on Clay” จากถ้วยดินเล็กๆ ใบหนึ่ง สู่สตูดิโอศิลปะที่เชียงใหม่ ที่ทุกชิ้นงานทำด้วยมือ 100%</p>
+        <p>เราเชื่อว่างานศิลปะไม่จำเป็นต้องอยู่แค่บนผนัง — มันอยู่ได้บนต่างหู สร้อยคอ ภาพวาดสัตว์เลี้ยงตัวโปรด หรือแม้แต่บนเค้กชิ้นหนึ่ง และอยากชวนทุกคนมาลองสร้างงานของตัวเองไปด้วยกัน</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2014</b>ก่อตั้ง</div>
+        <div class="stat"><b>100%</b>Handmade</div>
+        <div class="stat"><b>🌏</b>ส่งทั่วโลก</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="wrap">
+      <h2>มีอะไรบ้าง <span class="hand">what we do</span></h2>
+      <p class="sub">งานศิลปะที่จับต้องได้ ใส่ได้ และลงมือทำเองได้</p>
+      <div class="grid">
+        <article class="card">
+          <div class="ico">💍</div>
+          <h3>เครื่องประดับแฮนด์เมด</h3>
+          <p>ต่างหูเงินแท้ 925 สร้อยหินแท้ ลูกปัดแก้วมูราโน่ และดินโพลิเมอร์ คอลเลกชันใหม่อัปเดตตลอด</p>
+        </article>
+        <article class="card">
+          <div class="ico">🎨</div>
+          <h3>สีน้ำ &amp; Painting</h3>
+          <p>ภาพวาดสีน้ำและงานเพ้นท์ ดีไซน์โดย GoodBowlGold</p>
+        </article>
+        <article class="card">
+          <div class="ico">🐶</div>
+          <h3>Character &amp; Portrait</h3>
+          <p>รับวาด Character Cartoon และภาพเหมือนคน/สัตว์เลี้ยง ดูผลงานที่ <a href="https://www.instagram.com/character.g.b.g/" target="_blank" rel="noopener">@character.g.b.g</a></p>
+        </article>
+        <article class="card">
+          <div class="ico">🖌️</div>
+          <h3>Art Workshop</h3>
+          <p>กิจกรรมศิลปะสำหรับทุกวัย ครอบครัว และกลุ่มเพื่อน ใช้เวลาราว 2 ชม. ได้ผลงานกลับบ้าน</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops -->
+  <section class="alt">
+    <div class="wrap">
+      <h2>Workshop <span class="hand">art | play</span></h2>
+      <p class="sub">ไม่ต้องมีพื้นฐาน มาตัวเปล่าได้เลย — ทักมาสอบถามรอบและราคา</p>
+      <ul class="chips">
+        <li>🌼 Canvas cake ศิลปะกินได้</li>
+        <li>🌼 เพ้นท์สีอะคริลิคบนเฟรมผ้าใบ</li>
+        <li>🌼 สีน้ำขั้นต้น</li>
+        <li>🌼 ปั้นดินไทยเป็นพวงกุญแจ / เครื่องประดับ</li>
+        <li>🌼 เพ้นท์กระเป๋าผ้า</li>
+        <li>🌼 วาดภาพระบายสี</li>
+        <li>🌼 ตอกเครื่องเงิน</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap about">
+      <div>
+        <h2>ติดต่อ <span class="hand">say hi!</span></h2>
+        <p class="sub">สั่งงาน จองเวิร์กช็อป หรือคุยเรื่องงานคอลแลบ ทักได้ทุกช่องทาง</p>
+      </div>
+      <ul class="contact-list">
+        <li><a href="tel:0855952292"><span class="ic">☎</span><span><span class="k">โทร</span><span class="v">085 595 2292</span></span></a></li>
+        <li><a href="https://line.me/R/ti/p/@g.b.g.studio" target="_blank" rel="noopener"><span class="ic">L</span><span><span class="k">LINE</span><span class="v">@g.b.g.studio</span></span></a></li>
+        <li><a href="mailto:good.bowl.gold@gmail.com"><span class="ic">@</span><span><span class="k">อีเมล</span><span class="v">good.bowl.gold@gmail.com</span></span></a></li>
+        <li><a href="https://www.facebook.com/goodbowlgold/" target="_blank" rel="noopener"><span class="ic">f</span><span><span class="k">Facebook</span><span class="v">Goodbowlgold</span></span></a></li>
+        <li><a href="https://www.instagram.com/good.bowl.gold/" target="_blank" rel="noopener"><span class="ic">ig</span><span><span class="k">Instagram</span><span class="v">@good.bowl.gold</span></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Travel -->
+  <section id="travel" class="alt">
+    <div class="wrap">
+      <h2>การเดินทาง <span class="hand">find us</span></h2>
+      <p class="sub">📍 Chiang Mai, Thailand — โทรหรือทัก LINE ก่อนแวะมา เพื่อนัดเวลาที่สตูดิโอ</p>
+      <!-- TODO: replace q= with the studio's exact address or Google Maps place name -->
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=Chiang%20Mai%2C%20Thailand&z=13&output=embed" loading="lazy" title="แผนที่ Good Bowl Gold Studio" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Chiang+Mai+Thailand" target="_blank" rel="noopener">เปิดใน Google Maps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2014–2026 Good Bowl Gold · Art &amp; Crafts Studio · Chiang Mai</div>
+</footer>
+
+</body>
+</html>
